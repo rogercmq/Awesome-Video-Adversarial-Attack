@@ -1,5 +1,7 @@
 [!] 表示该文章和本repo主题没关系 [*] 表示该文章是我值得follow的工作
 
+- [Surveys](#surveys)
+    - [A Survey On Universal Adversarial Attack](#a-survey-on-universal-adversarial-attack)
 - [2021](#2021)
   - [NIPS](#nips)
     - [[*] Adversarial Attacks on Black Box Video Classifiers: Leveraging the Power of Geometric Transformations](#-adversarial-attacks-on-black-box-video-classifiers-leveraging-the-power-of-geometric-transformations)
@@ -8,6 +10,7 @@
     - [Learning Transferable Adversarial Perturbations](#learning-transferable-adversarial-perturbations)
   - [ACM MM](#acm-mm)
     - [Adversarial Pixel Masking: A Defense against Physical Attacks for Pre-trained Object Detectors](#adversarial-pixel-masking-a-defense-against-physical-attacks-for-pre-trained-object-detectors)
+    - [Efficient Sparse Attacks on Videos using Reinforcement Learning](#efficient-sparse-attacks-on-videos-using-reinforcement-learning)
   - [ICCV](#iccv)
     - [AdvDrop: Adversarial Attack to DNNs by Dropping Information](#advdrop-adversarial-attack-to-dnns-by-dropping-information)
     - [Feature Importance-aware Transferable Adversarial Attacks](#feature-importance-aware-transferable-adversarial-attacks)
@@ -16,10 +19,35 @@
     - [MAZE: Data-Free Model Stealing Attack Using Zeroth-Order Gradient Estimation](#maze-data-free-model-stealing-attack-using-zeroth-order-gradient-estimation)
     - [Regularizing Neural Networks via Adversarial Model Perturbation](#regularizing-neural-networks-via-adversarial-model-perturbation)
     - [Adversarial Robustness Across Representation Spaces](#adversarial-robustness-across-representation-spaces)
+  - [WACV](#wacv)
+    - [Appending Adversarial Frames for Universal Video Attack](#appending-adversarial-frames-for-universal-video-attack)
+  - [Others](#others)
+    - [Universal 3-Dimensional Perturbations for Black-Box Attacks on Video Recognition Systems](#universal-3-dimensional-perturbations-for-black-box-attacks-on-video-recognition-systems)
 - [2020](#2020)
+  - [AAAI](#aaai)
+    - [[*] Heuristic Black-Box Adversarial Attacks on Video Recognition Models](#-heuristic-black-box-adversarial-attacks-on-video-recognition-models)
+    - [[*] Finding Achilles' Heel: Adversarial Attack on Multi-modal Action Recognition](#-finding-achilles-heel-adversarial-attack-on-multi-modal-action-recognition)
+  - [ECCV](#eccv)
+    - [[*] Motion-Excited Sampler: Video Adversarial Attack with Sparked Prior](#-motion-excited-sampler-video-adversarial-attack-with-sparked-prior)
+  - [Others](#others-1)
+    - [Sparse Black-box Video Attack with Reinforcement Learning](#sparse-black-box-video-attack-with-reinforcement-learning)
 - [2019](#2019)
+  - [AAAI](#aaai-1)
+    - [[*] Sparse Adversarial Perturbations for Videos](#-sparse-adversarial-perturbations-for-videos)
+  - [NDSS](#ndss)
+    - [[*] Stealthy Adversarial Perturbations Against Real-Time Video Classification Systems](#-stealthy-adversarial-perturbations-against-real-time-video-classification-systems)
+  - [ACM MM](#acm-mm-1)
+    - [[*] Black-box Adversarial Attacks on Video Recognition Models](#-black-box-adversarial-attacks-on-video-recognition-models)
+  - [CVPR](#cvpr-1)
+    - [[*] Clean-Label Backdoor Attacks on Video Recognition Models](#-clean-label-backdoor-attacks-on-video-recognition-models)
 - [2018](#2018)
 - [Before 2018](#before-2018)
+
+# Surveys
+
+### A Survey On Universal Adversarial Attack
+
+Deep neural networks (DNNs) have demonstrated remarkable performance for various applications, meanwhile, they are widely known to be vulnerable to the attack of adversarial perturbations. This intriguing phenomenon has attracted significant attention in machine learning and what might be more surprising to the community is the existence of universal adversarial perturbations (UAPs), i.e. a single perturbation to fool the target DNN for most images. The advantage of UAP is that it can be generated beforehand and then be applied on-the-fly during the attack. With the focus on UAP against deep classifiers, this survey summarizes the recent progress on universal adversarial attacks, discussing the challenges from both the attack and defense sides, as well as the reason for the existence of UAP. Additionally, universal attacks in a wide range of applications beyond deep classification are also covered.
 
 # 2021
 
@@ -46,6 +74,10 @@ While effective, deep neural networks (DNNs) are vulnerable to adversarial attac
 ### Adversarial Pixel Masking: A Defense against Physical Attacks for Pre-trained Object Detectors
 
 Object detection based on pre-trained deep neural networks (DNNs) has achieved impressive performance and enabled many applications. However, DNN-based object detectors are shown to be vulnerable to physical adversarial attacks. Despite that recent efforts have been made to defend against these attacks, they either use strong assumptions or become less effective with pre-trained object detectors. In this paper, we propose adversarial pixel masking (APM), a defense against physical attacks, which is designed specifically for pre-trained object detectors. APM does not require any assumptions beyond the "patch-like" nature of a physical attack and can work with different pre-trained object detectors of different architectures and weights, making it a practical solution in many applications. We conduct extensive experiments, and the empirical results show that APM can significantly improve model robustness without significantly degrading clean performance.
+
+### Efficient Sparse Attacks on Videos using Reinforcement Learning
+
+More and more deep neural network models have been deployed in real-time video systems. However, it is proved that deep models are susceptible to the crafted adversarial examples. The adversarial examples are imperceptible and can make the normal deep models misclassify them. Although there exist a few works aiming at the adversarial examples of video recognition in the black-box attack mode, most of them need large perturbations or hundreds of thousands of queries. There are still lack of effective adversarial methods to produce adversarial videos with small perturbations and limited query numbers at the same time. In this paper, an efficient and powerful method is proposed for adversarial video attacks in the black-box attack mode. The proposed method is based on Reinforcement Learning (RL) like the previous work, i.e. using the agent in RL to adaptively find the sparse key frames to add perturbations. The key difference is that we design the new reward functions based on the loss reduction and the perturbation increment, and thus propose an efficient update mechanism to guide the agent to finish the attacks with smaller perturbations and fewer query numbers. The proposed algorithm has a new working mechanism. It is simple, efficient, and effective. Extensive experiments show our method has a good trade-off between the perturbation amplitude and the query numbers. Compared with the state-of-the-art algorithms, it has reduced 65.75% query numbers without image quality loss in the un-targeted attacks and simultaneously reduced 22.47% perturbations and 54.77% query numbers in the targeted attacks.
 
 ## ICCV
 
@@ -75,9 +107,71 @@ Effective regularization techniques are highly desired in deep learning for alle
 
 Adversarial robustness corresponds to the susceptibility of deep neural networks to imperceptible perturbations made at test time. In the context of image tasks, many algorithms have been proposed to make neural networks robust to adversarial perturbations made to the input pixels. These perturbations are typically measured in an ℓp norm. However, robustness often holds only for the specific attack used for training. In this work we extend the above setting to consider the problem of training of deep neural networks that can be made simultaneously robust to perturbations applied in multiple natural representation spaces. For the case of image data, examples include the standard pixel representation as well as the representation in the discrete cosine transform~(DCT) basis. We design a theoretically sound algorithm with formal guarantees for the above problem. Furthermore, our guarantees also hold when the goal is to require robustness with respect to multiple ℓp norm based attacks. We then derive an efficient practical implementation and demonstrate the effectiveness of our approach on standard datasets for image classification.
 
+## WACV
+
+### Appending Adversarial Frames for Universal Video Attack
+
+This paper investigates the problem of generating adversarial examples for video classification. We project all videos onto a semantic space and a perception space, and point out that adversarial attack is to find a counterpart which is close to the target in the perception space but far from the target in the semantic space. Based on this formulation, we notice that conventional attacking methods mostly used Euclidean distance to measure the perception space, but we propose to make full use of the property of videos and assume a modified video with a few consecutive frames replaced by dummy contents (e.g., a black frame with texts of `thank you for watching' on it) to be close to the original video in the perception space though they have a large Euclidean gap. This leads to a new attack approach which only adds perturbations on the newly-added frames. We show its high success rates in attacking six state-of-the-art video classification networks, as well as its universality, i.e., transferring well across videos and models.
+
+## Others
+
+### Universal 3-Dimensional Perturbations for Black-Box Attacks on Video Recognition Systems
+
+In Proceedings of the 43rd **IEEE Symposium on Security and Privacy** (Oakland’22)
+
+Widely deployed deep neural network (DNN) models have been proven to be vulnerable to adversarial perturbations in many applications (e.g., image, audio and text classifications). To date, there are only a few adversarial perturbations proposed to deviate the DNN models in video recognition systems by simply injecting 2D perturbations into video frames. However, such attacks may overly perturb the videos without learning the spatio-temporal features (across temporal frames), which are commonly extracted by DNN models for video recognition. To our best knowledge, we propose the first black-box attack framework that generates universal 3-dimensional (U3D) perturbations to subvert a variety of video recognition systems. U3D has many advantages, such as (1) as the transfer-based attack, U3D can universally attack multiple DNN models for video recognition without accessing to the target DNN model; (2) the high transferability of U3D makes such universal black-box attack easyto-launch, which can be further enhanced by integrating queries over the target model when necessary; (3) U3D ensures humanimperceptibility; (4) U3D can bypass the existing state-of-the-art defense schemes; (5) U3D can be efficiently generated with a few pre-learned parameters, and then immediately injected to attack real-time DNN-based video recognition systems. We have conducted extensive experiments to evaluate U3D on multiple DNN models and three large-scale video datasets. The experimental results demonstrate its superiority and practicality
+
 # 2020
 
+## AAAI
+
+### [*] Heuristic Black-Box Adversarial Attacks on Video Recognition Models
+
+We study the problem of attacking video recognition models in the black-box setting, where the model information is unknown and the adversary can only make queries to detect the predicted top-1 class and its probability. Compared with the black-box attack on images, attacking videos is more challenging as the computation cost for searching the adversarial perturbations on a video is much higher due to its high dimensionality. To overcome this challenge, we propose a heuristic black-box attack model that generates adversarial perturbations only on the selected frames and regions. More specifically, a heuristic-based algorithm is proposed to measure the importance of each frame in the video towards generating the adversarial examples. Based on the frames' importance, the proposed algorithm heuristically searches a subset of frames where the generated adversarial example has strong adversarial attack ability while keeps the perturbations lower than the given bound. Besides, to further boost the attack efficiency, we propose to generate the perturbations only on the salient regions of the selected frames. In this way, the generated perturbations are sparse in both temporal and spatial domains. Experimental results of attacking two mainstream video recognition methods on the UCF-101 dataset and the HMDB-51 dataset demonstrate that the proposed heuristic black-box adversarial attack method can significantly reduce the computation cost and lead to more than 28% reduction in query numbers for the untargeted attack on both datasets.
+
+##	ACM MM
+
+### [*] Finding Achilles' Heel: Adversarial Attack on Multi-modal Action Recognition
+
+Neural network-based models are notoriously known for their adversarial vulnerability. Recent adversarial machine learning mainly focused on images, where a small perturbation can be simply added to fool the learning model. Very recently, this practice has been explored in human action video attacks by adding perturbation to key frames. Unfortunately, frame selection is usually computationally expensive in run-time, and adding noises to all frames is unrealistic, either. In this paper, we present a novel yet efficient approach to address this issue. Multi-modal video data such as RGB, depth and skeleton data have been widely used for human action modeling, and they have been demonstrated with superior performance than a single modality. Interestingly, we observed that the skeleton data is more "vulnerable" under adversarial attack, and we propose to leverage this "Achilles' Heel" to attack multi-modal video data. In particular, first, an adversarial learning paradigm is designed to perturb skeleton data for a specific action under a black box setting, which highlights how body joints and key segments in videos are subject to attack. Second, we propose a graph attention model to explore the semantics between segments from different modalities and within a modality. Third, the attack will be launched in run-time on all modalities through the learned semantics. The proposed method has been extensively evaluated on multi-modal visual action datasets, including PKU-MMD and NTU-RGB+D to validate its effectiveness.
+
+## ECCV 
+
+### [*] Motion-Excited Sampler: Video Adversarial Attack with Sparked Prior
+
+Deep neural networks are known to be susceptible to adversarial noise, which is tiny and imperceptible perturbation. Most of previous works on adversarial attack mainly focus on image models, while the vulnerability of video models is less explored. In this paper, we aim to attack video models by utilizing intrinsic movement pattern and regional relative motion among video frames. We propose an effective motionexcited sampler to obtain motion-aware noise prior, which we term as sparked prior. Our sparked prior underlines frame correlations and utilizes video dynamics via relative motion. By using the sparked prior in gradient estimation, we can successfully attack a variety of video classification models with fewer number of queries. Extensive experimental results on four benchmark datasets validate the efficacy of our proposed method.
+
+## Others
+
+### Sparse Black-box Video Attack with Reinforcement Learning
+
+Black-box adversarial attacks on video recognition models have been explored. Considering the temporal interactions between frames, a few methods try to select some key frames, and then perform attacks on them. Unfortunately, their selecting strategy is independent with the attacking step, resulting in the limited performance. Instead, we argue the frame selection phase is closely relevant with the attacking phase. The key frames should be adjusted according to the attacking results. For that, we formulate the black-box video attacks into Reinforcement Learning (RL) framework. Specifically, the environment in RL is set as the threat model, and the agent in RL plays the role of frame selecting. By continuously querying the threat models and receiving the attacking feedback, the agent gradually adjusts its frame selection strategy and adversarial perturbations become smaller and smaller. A series of experiments demonstrate that our method can significantly reduce the adversarial perturbations with efficient query times.
+
 # 2019
+
+## AAAI
+
+### [*] Sparse Adversarial Perturbations for Videos
+
+Although adversarial samples of deep neural networks (DNNs) have been intensively studied on static images, their extensions in videos are never explored. Compared with images, attacking a video needs to consider not only spatial cues but also temporal cues. Moreover, to improve the imperceptibility as well as reduce the computation cost, perturbations should be added on as few frames as possible, i.e., adversarial perturbations are temporally *sparse*. This further motivates the *propagation* of perturbations, which denotes that perturbations added on the current frame can transfer to the next frames via their temporal interactions. Thus, no (or few) extra perturbations are needed for these frames to misclassify them. To this end, we propose the first white-box video attack method, which utilizes an *l*2*,*1-norm based optimization algorithm to compute the sparse adversarial perturbations for videos. We choose the action recognition as the targeted task, and networks with a CNN+RNN architecture as threat models to verify our method. Thanks to the propagation, we can compute perturbations on a shortened version video, and then adapt them to the long version video to fool DNNs. Experimental results on the UCF101 dataset demonstrate that even only one frame in a video is perturbed, the fooling rate can still reach 59.7%.
+
+## NDSS 
+
+### [*] Stealthy Adversarial Perturbations Against Real-Time Video Classification Systems
+
+Recent research has demonstrated the brittleness of machine learning systems to adversarial perturbations. However, the studies have been mostly limited to perturbations on images and more generally, classification tasks that do not deal with real-time stream inputs. In this paper we ask ”Are adversarial perturbations that cause misclassification in real-time video classification systems possible, and if so what properties must they satisfy?” Real-time video classification systems find application in surveillance applications, smart vehicles, and smart elderly care and thus, misclassification could be particularly harmful (e.g., a mishap at an elderly care facility may be missed). Video classification systems take video clips as inputs and these clip boundaries are not deterministic. We show that perturbations that do not take “the indeterminism in the clip boundaries input to the video classifier” into account, do not achieve high attack success rates. We propose novel approaches for generating 3D adversarial perturbations (perturbation clips) that exploit recent advances in generative models to not only overcome this key challenge but also provide stealth. In particular, our most potent 3D adversarial perturbations cause targeted activities in video streams to be misclassified with rates over 80%. At the same time, they also ensure that the perturbations leave other (untargeted) activities largely unaffected making them extremely stealthy. Finally, we also derive a single-frame (2D) perturbation that can be applied to every frame in a video stream, and which in many cases, achieves extremely high misclassification rates.
+
+## ACM MM
+
+### [*] Black-box Adversarial Attacks on Video Recognition Models
+
+Deep neural networks (DNNs) are known for their vulnerability to adversarial examples. These are examples that have undergone small, carefully crafted perturbations, and which can easily fool a DNN into making misclassifications at test time. Thus far, the field of adversarial research has mainly focused on image models, under either a white-box setting, where an adversary has full access to model parameters, or a black-box setting where an adversary can only query the target model for probabilities or labels. Whilst several white-box attacks have been proposed for video models, black-box video attacks are still unexplored. To close this gap, we propose the first black-box video attack framework, called V-BAD. V-BAD utilizestentative perturbations transferred from image models andpartition-based rectifications found by the NES to obtain good adversarial gradient estimates with fewer queries to the target model. V-BAD is equivalent to estimating the projection of the adversarial gradient on a selected subspace. Using three benchmark video datasets, we demonstrate that V-BAD can craft both untargeted and targeted attacks to fool two state-of-the-art deep video recognition models. For the targeted attack, it achieves $>$93% success rate using only an average of $3.4 \sim 8.4 \times 10^4$ queries, a similar number of queries to state-of-the-art black-box image attacks. This is despite the fact that videos often have two orders of magnitude higher dimensionality than static images. We believe that V-BAD is a promising new tool to evaluate and improve the robustness of video recognition models to black-box adversarial attacks.
+
+## CVPR
+
+### [*] Clean-Label Backdoor Attacks on Video Recognition Models
+
+Deep neural networks (DNNs) are vulnerable to backdoor attacks which can hide backdoor triggers in DNNs by poisoning training data. A backdoored model behaves normally on clean test images, yet consistently predicts a particular target class for any test examples that contain the trigger pattern. As such, backdoor attacks are hard to detect, and have raised severe security concerns in real-world applications. Thus far, backdoor research has mostly been conducted in the image domain with image classification models. In this paper, we show that existing image backdoor attacks are far less effective on videos, and outline 4 strict conditions where existing attacks are likely to fail: 1) scenarios with more input dimensions (eg. videos), 2) scenarios with high resolution, 3) scenarios with a large number of classes and few examples per class (a "sparse dataset"), and 4) attacks with access to correct labels (eg. clean-label attacks). We propose the use of a universal adversarial trigger as the backdoor trigger to attack video recognition models, a situation where backdoor attacks are likely to be challenged by the above 4 strict conditions. We show on benchmark video datasets that our proposed backdoor attack can manipulate state-of-the-art video models with high success rates by poisoning only a small proportion of training data (without changing the labels). We also show that our proposed backdoor attack is resistant to state-of-the-art backdoor defense/detection methods, and can even be applied to improve image backdoor attacks. Our proposed video backdoor attack not only serves as a strong baseline for improving the robustness of video models, but also provides a new perspective for more understanding more powerful backdoor attacks.
 
 # 2018
 
