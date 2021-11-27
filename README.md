@@ -42,6 +42,7 @@ REFERENCE: https://nicholas.carlini.com/writing/2019/all-adversarial-example-pap
 - [2019](#2019)
   - [AAAI](#aaai-1)
     - [[*] Sparse Adversarial Perturbations for Videos](#-sparse-adversarial-perturbations-for-videos)
+    - [[*] Adversarial Framing for Image and Video Classification](#-adversarial-framing-for-image-and-video-classification)
   - [NDSS](#ndss)
     - [[*] Stealthy Adversarial Perturbations Against Real-Time Video Classification Systems](#-stealthy-adversarial-perturbations-against-real-time-video-classification-systems)
   - [ACM MM](#acm-mm-1)
@@ -188,6 +189,10 @@ Deep neural networks for video classification, just like image classification ne
 ### [*] Sparse Adversarial Perturbations for Videos
 
 Although adversarial samples of deep neural networks (DNNs) have been intensively studied on static images, their extensions in videos are never explored. Compared with images, attacking a video needs to consider not only spatial cues but also temporal cues. Moreover, to improve the imperceptibility as well as reduce the computation cost, perturbations should be added on as few frames as possible, i.e., adversarial perturbations are temporally *sparse*. This further motivates the *propagation* of perturbations, which denotes that perturbations added on the current frame can transfer to the next frames via their temporal interactions. Thus, no (or few) extra perturbations are needed for these frames to misclassify them. To this end, we propose the first white-box video attack method, which utilizes an *l*2*,*1-norm based optimization algorithm to compute the sparse adversarial perturbations for videos. We choose the action recognition as the targeted task, and networks with a CNN+RNN architecture as threat models to verify our method. Thanks to the propagation, we can compute perturbations on a shortened version video, and then adapt them to the long version video to fool DNNs. Experimental results on the UCF101 dataset demonstrate that even only one frame in a video is perturbed, the fooling rate can still reach 59.7%.
+
+### [*] Adversarial Framing for Image and Video Classification
+
+Neural networks are prone to adversarial attacks. In general, such attacks deteriorate the quality of the input by either slightly modifying most of its pixels, or by occluding it with a patch. In this paper, we propose a method that keeps the image unchanged and only adds an *adversarial framing* on the border of the image. We show empirically that our method is able to successfully attack state-of-theart methods on both image and video classification problems. Notably, the proposed method results in a universal attack which is very fast at test time. Source code can be found at github.com/zajaczajac/adv_framing.
 
 ## NDSS 
 
