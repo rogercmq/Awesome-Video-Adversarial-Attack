@@ -18,9 +18,11 @@ REFERENCE: https://nicholas.carlini.com/writing/2019/all-adversarial-example-pap
     - [Adversarial Pixel Masking: A Defense against Physical Attacks for Pre-trained Object Detectors](#adversarial-pixel-masking-a-defense-against-physical-attacks-for-pre-trained-object-detectors)
     - [[*] Efficient Sparse Attacks on Videos using Reinforcement Learning](#-efficient-sparse-attacks-on-videos-using-reinforcement-learning)
   - [ICCV](#iccv)
+    - [[*] Just One Moment: Structural Vulnerability of Deep Action Recognition against One Frame Attack](#-just-one-moment-structural-vulnerability-of-deep-action-recognition-against-one-frame-attack)
     - [AdvDrop: Adversarial Attack to DNNs by Dropping Information](#advdrop-adversarial-attack-to-dnns-by-dropping-information)
     - [Feature Importance-aware Transferable Adversarial Attacks](#feature-importance-aware-transferable-adversarial-attacks)
   - [CVPR](#cvpr)
+    - [[*] Over-the-Air Adversarial Flickering Attacks against Video Recognition Networks](#-over-the-air-adversarial-flickering-attacks-against-video-recognition-networks)
     - [Delving into Data: Effectively Substitute Training for Black-box Attack](#delving-into-data-effectively-substitute-training-for-black-box-attack)
     - [MAZE: Data-Free Model Stealing Attack Using Zeroth-Order Gradient Estimation](#maze-data-free-model-stealing-attack-using-zeroth-order-gradient-estimation)
     - [Regularizing Neural Networks via Adversarial Model Perturbation](#regularizing-neural-networks-via-adversarial-model-perturbation)
@@ -56,7 +58,6 @@ REFERENCE: https://nicholas.carlini.com/writing/2019/all-adversarial-example-pap
 - [Before 2018](#before-2018)
 
 # Basic Knowledge
-
 https://zhuanlan.zhihu.com/p/37260275  对抗攻击基础知识
 
 # Surveys
@@ -72,8 +73,6 @@ Deep neural networks (DNNs) have demonstrated remarkable performance for various
 ### [*] Sparse Adversarial Video Attacks with Spatial Transformations
 
 In recent years, a significant amount of research efforts concentrated on adversarial attacks on images, while adversarial video attacks have seldom been explored. We propose an adversarial attack strategy on videos, called DeepSAVA. Our model includes both additive perturbation and spatial transformation by a unified optimisation framework, where the structural similarity index (SSIM) measure is adopted to measure the adversarial distance. We design an effective and novel optimisation scheme which alternatively utilizes Bayesian optimisation to identify the most influential frame in a video and Stochastic gradient descent (SGD) based optimisation to produce both additive and spatial-transformed perturbations. Doing so enables DeepSAVA to perform a very sparse attack on videos for maintaining human imperceptibility while still achieving state-of-the-art performance in terms of both attack success rate and adversarial transferability. Our intensive experiments on various types of deep neural networks and video datasets confirm the superiority of DeepSAVA.
-
-47 48 57
 
 ## NIPS
 
@@ -109,6 +108,9 @@ More and more deep neural network models have been deployed in real-time video s
 
 ## ICCV
 
+### [*] Just One Moment: Structural Vulnerability of Deep Action Recognition against One Frame Attack
+The video-based action recognition task has been extensively studied in recent years. In this paper, we study the structural vulnerability of deep learning-based action recognition models against the adversarial attack using the one frame attack that adds an inconspicuous perturbation to only a single frame of a given video clip. Our analysis shows that the models are highly vulnerable against the one frame attack due to their structural properties. Experiments demonstrate high fooling rates and inconspicuous characteristics of the attack. Furthermore, we show that strong universal one frame perturbations can be obtained under various scenarios. Our work raises the serious issue of adversarial vulnerability of the state-of-the-art action recognition models in various perspectives.
+
 ### AdvDrop: Adversarial Attack to DNNs by Dropping Information
 
 Human can easily recognize visual objects with lost information: even losing most details with only contour reserved, e.g. cartoon. However, in terms of visual perception of Deep Neural Networks (DNNs), the ability for recognizing abstract objects (visual objects with lost information) is still a challenge. In this work, we investigate this issue from an adversarial viewpoint: will the performance of DNNs decrease even for the images only losing a little information? Towards this end, we propose a novel adversarial attack, named \textit{AdvDrop}, which crafts adversarial examples by dropping existing information of images. Previously, most adversarial attacks add extra disturbing information on clean images explicitly. Opposite to previous works, our proposed work explores the adversarial robustness of DNN models in a novel perspective by dropping imperceptible details to craft adversarial examples. We demonstrate the effectiveness of \textit{AdvDrop} by extensive experiments, and show that this new type of adversarial examples is more difficult to be defended by current defense systems.
@@ -118,6 +120,10 @@ Human can easily recognize visual objects with lost information: even losing mos
 Transferability of adversarial examples is of central importance for attacking an unknown model, which facilitates adversarial attacks in more practical scenarios, e.g., black-box attacks. Existing transferable attacks tend to craft adversarial examples by indiscriminately distorting features to degrade prediction accuracy in a source model without aware of intrinsic features of objects in the images. We argue that such brute-force degradation would introduce model-specific local optimum into adversarial examples, thus limiting the transferability. By contrast, we propose the Feature Importance-aware Attack (FIA), which disrupts important object-aware features that dominate model decisions consistently. More specifically, we obtain feature importance by introducing the aggregate gradient, which averages the gradients with respect to feature maps of the source model, computed on a batch of random transforms of the original clean image. The gradients will be highly correlated to objects of interest, and such correlation presents invariance across different models. Besides, the random transforms will preserve intrinsic features of objects and suppress model-specific information. Finally, the feature importance guides to search for adversarial examples towards disrupting critical features, achieving stronger transferability. Extensive experimental evaluation demonstrates the effectiveness and superior performance of the proposed FIA, i.e., improving the success rate by 9.5% against normally trained models and 12.8% against defense models as compared to the state-of-the-art transferable attacks. Code is available at: [this https URL](https://github.com/hcguoO0/FIA)
 
 ## CVPR
+
+### [*] Over-the-Air Adversarial Flickering Attacks against Video Recognition Networks
+
+Deep neural networks for video classification, just like image classification networks, may be subjected to adversarial manipulation. The main difference between image classifiers and video classifiers is that the latter usually use temporal information contained within the video. In this work we present a manipulation scheme for fooling video classifiers by introducing a flickering temporal perturbation that is practically unnoticeable by human observers and is implementable in the real world. After demonstrating the manipulation of action classification of single videos, we generalize the procedure to make universal adversarial perturbation, achieving high fooling ratio. In addition, we generalize the universal perturbation and produce a temporal-invariant perturbation, which can be applied to the video without synchronizing the perturbation to the input. The attack was implemented on several target models and the transferability of the attack was demonstrated. These properties allow us to bridge the gap between simulated environment and real-world application, as will be demonstrated in this paper for the first time for an over-the-air flickering attack.
 
 ### Delving into Data: Effectively Substitute Training for Black-box Attack
 

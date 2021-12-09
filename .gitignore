@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /*.pdf
 /*演示文稿*
+/*.pptx
